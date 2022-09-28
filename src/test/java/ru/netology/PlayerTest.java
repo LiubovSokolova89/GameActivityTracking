@@ -27,7 +27,7 @@ public class PlayerTest {
         Game game1 = store.publishGame("Cars", "Гонки");
         Game game2 = store.publishGame("Race", "Гонки");
 
-        Player player = new Player("Alex");
+        Player player = new Player("Bill");
         player.installGame(game1);
         player.installGame(game2);
         player.play(game1, 5);
