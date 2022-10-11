@@ -69,6 +69,6 @@ public class PlayerTest {
 
         Assertions.assertThrows(RuntimeException.class, () -> player.sumGenre("Гонки"));
     }
-    
+
     // другие ваши тесты
 }
