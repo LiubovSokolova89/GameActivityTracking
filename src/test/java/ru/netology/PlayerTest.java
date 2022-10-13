@@ -37,6 +37,9 @@ public class PlayerTest {
         Game[] actual = player.mostPlayerByGenre(game2.getGenre());
 
         Assertions.assertArrayEquals(expected, actual);
+
+        Game expected = null;
+        Game actual = player.mostPlayerByGenre(game2.getGenre());
     }
 
     @Test
