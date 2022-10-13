@@ -33,10 +33,13 @@ public class PlayerTest {
 
         player.play(game1, 5);
 
+        Game[] expected = {game1};
+        Game[] actual = player.mostPlayerByGenre(game2.getGenre());
+
+        Assertions.assertArrayEquals(expected, actual);
+
         Game expected = null;
         Game actual = player.mostPlayerByGenre(game2.getGenre());
-
-        Assertions.assertEquals(expected, actual);
     }
 
     @Test
@@ -60,15 +63,9 @@ public class PlayerTest {
     @Test
     public void shouldCheckGamesIfThereAreExceptions() {
         GameStore store = new GameStore();
-        Game game1 = store.publishGame("Cars", "Гонки");
-        Game game2 = store.publishGame("Race", "Гонки");
+        Player player = new Player("Oleg");
+        Game game = store.publishGame("Swamp", "Puzzle");
 
-        Player player = new Player("Bill");
-        player.installGame(game1);
-        player.play(game1, 15);
-
-        Assertions.assertThrows(RuntimeException.class, () -> player.sumGenre("Гонки"));
+        Assertions.assertThrows(RuntimeException.class, () -> player.play(game, 10));
     }
-
-    // другие ваши тесты
 }
