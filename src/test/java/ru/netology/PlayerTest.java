@@ -30,16 +30,13 @@ public class PlayerTest {
         Player player = new Player("Bill");
         player.installGame(game1);
         player.installGame(game2);
-
+      
         player.play(game1, 5);
 
         Game[] expected = {game1};
         Game[] actual = player.mostPlayerByGenre(game2.getGenre());
 
         Assertions.assertArrayEquals(expected, actual);
-
-        Game expected = null;
-        Game actual = player.mostPlayerByGenre(game2.getGenre());
     }
 
     @Test
